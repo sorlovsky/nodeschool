@@ -5,6 +5,8 @@ var path = process.argv[2];
 var extension = process.argv[3];
 
 function wc(callback){
+	var fs = require('fs');
+	var files = [];
 	var str = fs.readdir(path, function doneReading(err, list) {
 		var re = /(?:\.([^.]+))?$/;
 		for (var i=0; i<list.length; i++){
